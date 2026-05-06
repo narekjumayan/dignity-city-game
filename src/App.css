@@ -896,15 +896,18 @@ h1 {
 
 @media (max-width: 900px) {
     :root {
-        --ui-left: 16px;
-        --ui-top: 16px;
+        --ui-left: 12px;
+        --ui-top: 12px;
         --ui-width: 100%;
+        --panel-width: 100%;
     }
 
     .gameShell {
-        min-height: 100vh;
-        padding: 16px;
-        background-position: center;
+        min-height: 100dvh;
+        padding: 12px;
+        overflow-x: hidden;
+        overflow-y: auto;
+        background-position: 62% center;
     }
 
     .backgroundOverlay,
@@ -920,50 +923,142 @@ h1 {
         background:
                 linear-gradient(
                         180deg,
-                        rgba(2, 6, 23, 0.88) 0%,
-                        rgba(2, 6, 23, 0.72) 34%,
+                        rgba(2, 6, 23, 0.78) 0%,
+                        rgba(2, 6, 23, 0.66) 28%,
                         rgba(2, 6, 23, 0.94) 100%
                 ),
                 radial-gradient(circle at center, transparent 36%, rgba(0, 0, 0, 0.62) 100%);
     }
 
     .gameLayout {
-        display: grid;
-        gap: 14px;
+        min-height: auto;
+        display: block;
     }
 
     .gameCard,
     .solutionCard {
         width: 100%;
-        max-width: none;
+        max-width: 100%;
     }
 
     .sidePanel {
-        position: relative;
-        top: auto;
-        right: auto;
-        width: 100%;
-        max-height: none;
-        display: grid;
-        grid-template-columns: 1fr;
+        display: none;
     }
 
-    .memoryPanelCard,
-    .badgePanelCard {
-        max-height: none;
+    .progressMap {
+        padding: 8px;
+        margin-bottom: 10px;
+        border-radius: 14px;
     }
 
-    .memoryList,
-    .badgeList {
-        max-height: 260px;
+    .progressTitle {
+        font-size: 0.66rem;
+        margin-bottom: 6px;
+    }
+
+    .progressSteps {
+        gap: 5px;
+    }
+
+    .progressStep {
+        font-size: 0.62rem;
+        padding: 6px 7px;
+    }
+
+    .chapterRow {
+        gap: 8px;
+        margin-bottom: 8px;
+        font-size: 0.68rem;
     }
 
     h1 {
-        font-size: clamp(1.85rem, 9vw, 3.2rem);
+        font-size: clamp(1.45rem, 7vw, 2.2rem);
+        line-height: 1.12;
+        margin-bottom: 10px;
+        letter-spacing: -0.035em;
+    }
+
+    .subtitle {
+        font-size: 0.82rem;
+        line-height: 1.4;
+        margin-bottom: 8px;
+    }
+
+    .dialogueBox,
+    .reflectionBox,
+    .noteBox {
+        padding: 14px;
+        border-radius: 16px;
+    }
+
+    .dialogueBox p,
+    .reflectionBox p,
+    .noteBox p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+
+    .reflectionBox h2 {
+        font-size: 1.2rem;
+    }
+
+    .choices {
+        gap: 8px;
+        margin-top: 10px;
+    }
+
+    .choices button,
+    .finalButtons button {
+        padding: 11px 12px;
+        font-size: 0.86rem;
+        line-height: 1.38;
+        border-radius: 14px;
+    }
+
+    .choiceLabel {
+        font-size: 0.56rem;
+        margin-bottom: 5px;
+        padding: 3px 7px;
+    }
+
+    .outcomeGrid {
+        gap: 8px;
+    }
+
+    .outcomeCard,
+    .solutionItem,
+    .resultSummary article {
+        padding: 11px;
+        border-radius: 14px;
+    }
+
+    .outcomeCard h2,
+    .solutionItem h2 {
+        font-size: 0.92rem;
+    }
+
+    .outcomeCard p,
+    .solutionItem p,
+    .resultSummary p {
+        font-size: 0.8rem;
+        line-height: 1.42;
+    }
+
+    .outcomeStatus {
+        font-size: 0.56rem;
+        padding: 4px 7px;
     }
 
     .resultSummary,
     .finalButtons {
+        grid-template-columns: 1fr;
+    }
+
+    .solutionList {
+        gap: 8px;
+    }
+
+    .solutionItem {
         grid-template-columns: 1fr;
     }
 }
