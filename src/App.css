@@ -1,0 +1,1015 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --ui-left: 32px;
+    --ui-top: 24px;
+    --ui-width: min(54vw, 760px);
+    --panel-width: 315px;
+}
+
+body {
+    margin: 0;
+    font-family:
+            "Segoe UI",
+            "Noto Sans Armenian",
+            "Arial Armenian",
+            Arial,
+            sans-serif;
+    background: #020617;
+    color: #f8fafc;
+}
+
+button {
+    font-family: inherit;
+}
+
+.gameShell {
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+    padding: var(--ui-top) var(--ui-left);
+    background-image: var(--scene-image);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    isolation: isolate;
+}
+
+.backgroundOverlay {
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    pointer-events: none;
+    background:
+            linear-gradient(
+                    90deg,
+                    rgba(2, 6, 23, 0.96) 0%,
+                    rgba(2, 6, 23, 0.9) 28%,
+                    rgba(2, 6, 23, 0.66) 52%,
+                    rgba(2, 6, 23, 0.18) 76%,
+                    rgba(2, 6, 23, 0.08) 100%
+            ),
+            radial-gradient(circle at 18% 18%, rgba(147, 197, 253, 0.14), transparent 30%),
+            radial-gradient(circle at 82% 12%, rgba(255, 255, 255, 0.08), transparent 24%),
+            radial-gradient(circle at center, transparent 42%, rgba(0, 0, 0, 0.56) 100%);
+}
+
+.atmosphere-pen .backgroundOverlay {
+    background:
+            linear-gradient(
+                    90deg,
+                    rgba(5, 13, 24, 0.97) 0%,
+                    rgba(5, 13, 24, 0.9) 30%,
+                    rgba(15, 23, 42, 0.62) 54%,
+                    rgba(15, 23, 42, 0.2) 78%,
+                    rgba(15, 23, 42, 0.08) 100%
+            ),
+            radial-gradient(circle at 43% 58%, rgba(245, 158, 11, 0.16), transparent 20%),
+            radial-gradient(circle at center, transparent 42%, rgba(0, 0, 0, 0.54) 100%);
+}
+
+.atmosphere-bus .backgroundOverlay {
+    background:
+            linear-gradient(
+                    90deg,
+                    rgba(7, 12, 22, 0.96) 0%,
+                    rgba(7, 12, 22, 0.88) 32%,
+                    rgba(30, 41, 59, 0.58) 55%,
+                    rgba(30, 41, 59, 0.18) 78%,
+                    rgba(30, 41, 59, 0.08) 100%
+            ),
+            radial-gradient(circle at 48% 26%, rgba(234, 179, 8, 0.14), transparent 26%),
+            radial-gradient(circle at center, transparent 42%, rgba(0, 0, 0, 0.5) 100%);
+}
+
+.atmosphere-music .backgroundOverlay {
+    background:
+            linear-gradient(
+                    90deg,
+                    rgba(3, 7, 18, 0.97) 0%,
+                    rgba(8, 8, 28, 0.88) 32%,
+                    rgba(30, 27, 75, 0.55) 55%,
+                    rgba(30, 27, 75, 0.18) 78%,
+                    rgba(30, 27, 75, 0.08) 100%
+            ),
+            radial-gradient(circle at 50% 28%, rgba(139, 92, 246, 0.18), transparent 26%),
+            radial-gradient(circle at center, transparent 42%, rgba(0, 0, 0, 0.58) 100%);
+}
+
+.atmosphere-rainboy .backgroundOverlay {
+    background:
+            linear-gradient(
+                    90deg,
+                    rgba(1, 5, 12, 0.98) 0%,
+                    rgba(1, 5, 12, 0.92) 30%,
+                    rgba(15, 23, 42, 0.68) 54%,
+                    rgba(15, 23, 42, 0.24) 78%,
+                    rgba(15, 23, 42, 0.1) 100%
+            ),
+            radial-gradient(circle at 46% 24%, rgba(59, 130, 246, 0.16), transparent 28%),
+            radial-gradient(circle at center, transparent 38%, rgba(0, 0, 0, 0.62) 100%);
+}
+
+.atmosphere-charity .backgroundOverlay {
+    background:
+            linear-gradient(
+                    90deg,
+                    rgba(23, 17, 13, 0.97) 0%,
+                    rgba(23, 17, 13, 0.9) 30%,
+                    rgba(41, 37, 36, 0.62) 54%,
+                    rgba(41, 37, 36, 0.2) 78%,
+                    rgba(41, 37, 36, 0.08) 100%
+            ),
+            radial-gradient(circle at 54% 24%, rgba(255, 255, 255, 0.18), transparent 20%),
+            radial-gradient(circle at center, transparent 40%, rgba(0, 0, 0, 0.58) 100%);
+}
+
+
+.atmosphere-shop .backgroundOverlay {
+    background:
+            linear-gradient(
+                    90deg,
+                    rgba(8, 10, 14, 0.97) 0%,
+                    rgba(8, 10, 14, 0.9) 30%,
+                    rgba(28, 25, 23, 0.62) 54%,
+                    rgba(28, 25, 23, 0.2) 78%,
+                    rgba(28, 25, 23, 0.08) 100%
+            ),
+            radial-gradient(circle at 48% 28%, rgba(245, 158, 11, 0.13), transparent 24%),
+            radial-gradient(circle at center, transparent 40%, rgba(0, 0, 0, 0.58) 100%);
+}
+
+.atmosphere-student .backgroundOverlay {
+    background:
+            linear-gradient(
+                    90deg,
+                    rgba(5, 10, 18, 0.97) 0%,
+                    rgba(5, 10, 18, 0.9) 31%,
+                    rgba(15, 23, 42, 0.62) 55%,
+                    rgba(15, 23, 42, 0.22) 78%,
+                    rgba(15, 23, 42, 0.08) 100%
+            ),
+            radial-gradient(circle at 45% 22%, rgba(147, 197, 253, 0.12), transparent 26%),
+            radial-gradient(circle at center, transparent 42%, rgba(0, 0, 0, 0.56) 100%);
+}
+
+.atmosphere-ending .backgroundOverlay,
+.atmosphere-solution .backgroundOverlay {
+    background:
+            linear-gradient(
+                    90deg,
+                    rgba(2, 6, 23, 0.96) 0%,
+                    rgba(2, 6, 23, 0.9) 32%,
+                    rgba(15, 23, 42, 0.68) 58%,
+                    rgba(15, 23, 42, 0.34) 82%,
+                    rgba(15, 23, 42, 0.2) 100%
+            ),
+            radial-gradient(circle at 36% 16%, rgba(147, 197, 253, 0.12), transparent 28%),
+            radial-gradient(circle at center, transparent 42%, rgba(0, 0, 0, 0.58) 100%);
+}
+
+.grainLayer {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.18;
+    mix-blend-mode: soft-light;
+    background-image:
+            radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.2) 0 1px, transparent 1px),
+            radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.18) 0 1px, transparent 1px),
+            linear-gradient(120deg, rgba(255, 255, 255, 0.04) 0 1px, transparent 1px 100%);
+    background-size: 12px 12px, 15px 15px, 48px 48px;
+}
+
+.gameLayout {
+    position: relative;
+    z-index: 1;
+    min-height: calc(100vh - 48px);
+}
+
+.gameCard {
+    width: var(--ui-width);
+    max-width: 760px;
+    min-height: auto;
+    padding: 0;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    animation: sceneIn 420ms ease both;
+}
+
+@keyframes sceneIn {
+    from {
+        opacity: 0;
+        transform: translateX(-12px);
+        filter: blur(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+        filter: blur(0);
+    }
+}
+
+.progressMap {
+    width: 100%;
+    margin-bottom: 14px;
+    padding: 10px 12px;
+    border-radius: 16px;
+    background: rgba(2, 6, 23, 0.42);
+    border: 1px solid rgba(226, 232, 240, 0.1);
+    backdrop-filter: blur(14px);
+}
+
+.progressTitle {
+    display: block;
+    margin-bottom: 9px;
+    color: #cbd5e1;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.progressSteps {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    overflow-x: auto;
+    padding-bottom: 2px;
+}
+
+.progressStep {
+    min-width: fit-content;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 9px;
+    border-radius: 999px;
+    color: #94a3b8;
+    background: rgba(15, 23, 42, 0.56);
+    border: 1px solid rgba(226, 232, 240, 0.08);
+    font-size: 0.72rem;
+    transition:
+            color 220ms ease,
+            border-color 220ms ease,
+            background 220ms ease;
+}
+
+.progressStep.visited {
+    color: #bfdbfe;
+    border-color: rgba(147, 197, 253, 0.22);
+}
+
+.progressStep.active {
+    color: #ffffff;
+    background: rgba(37, 99, 235, 0.2);
+    border-color: rgba(191, 219, 254, 0.38);
+}
+
+.stepDot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #475569;
+    box-shadow: 0 0 0 3px rgba(71, 85, 105, 0.14);
+}
+
+.progressStep.visited .stepDot,
+.progressStep.active .stepDot {
+    background: #bfdbfe;
+    box-shadow: 0 0 14px rgba(191, 219, 254, 0.5);
+}
+
+.chapterRow {
+    display: flex;
+    justify-content: space-between;
+    gap: 14px;
+    margin-bottom: 12px;
+    padding: 0 2px;
+    color: #bfdbfe;
+    font-size: 0.78rem;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+}
+
+.subtitle {
+    max-width: 100%;
+    margin: 0 0 10px;
+    color: #93c5fd;
+    font-size: 0.92rem;
+    line-height: 1.5;
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.6);
+}
+
+h1 {
+    max-width: 100%;
+    margin: 0 0 18px;
+    font-size: clamp(2rem, 4.1vw, 4rem);
+    line-height: 1.04;
+    letter-spacing: -0.055em;
+    color: #ffffff;
+    text-shadow: 0 8px 28px rgba(0, 0, 0, 0.55);
+}
+
+.dialogueBox,
+.reflectionBox,
+.noteBox,
+.resultSummary article,
+.solutionItem {
+    backdrop-filter: blur(18px);
+}
+
+.dialogueBox {
+    width: 100%;
+    padding: 22px;
+    border-radius: 22px;
+    background:
+            linear-gradient(135deg, rgba(2, 6, 23, 0.76), rgba(15, 23, 42, 0.58));
+    border: 1px solid rgba(226, 232, 240, 0.14);
+    box-shadow:
+            0 20px 50px rgba(0, 0, 0, 0.26),
+            inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.dialogueBox p {
+    margin: 0 0 14px;
+    color: #e5e7eb;
+    font-size: clamp(1rem, 1.45vw, 1.16rem);
+    line-height: 1.7;
+}
+
+.dialogueBox p:last-child {
+    margin-bottom: 0;
+}
+
+.choices {
+    width: 100%;
+    display: grid;
+    gap: 11px;
+    margin-top: 14px;
+}
+
+.choices button,
+.finalButtons button {
+    position: relative;
+    width: 100%;
+    padding: 14px 15px 15px;
+    border: 1px solid rgba(226, 232, 240, 0.13);
+    border-radius: 17px;
+    color: #f8fafc;
+    background:
+            linear-gradient(135deg, rgba(15, 23, 42, 0.72), rgba(2, 6, 23, 0.58));
+    box-shadow: 0 16px 42px rgba(0, 0, 0, 0.18);
+    font-size: 0.96rem;
+    line-height: 1.48;
+    text-align: left;
+    cursor: pointer;
+    overflow: hidden;
+    backdrop-filter: blur(16px);
+    transition:
+            transform 190ms ease,
+            border-color 190ms ease,
+            background 190ms ease,
+            box-shadow 190ms ease;
+}
+
+.choices button::before,
+.finalButtons button::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+            linear-gradient(90deg, rgba(147, 197, 253, 0.11), transparent 48%),
+            radial-gradient(circle at 8% 50%, rgba(255, 255, 255, 0.09), transparent 24%);
+    opacity: 0;
+    transition: opacity 190ms ease;
+}
+
+.choices button:hover,
+.finalButtons button:hover {
+    transform: translateX(5px);
+    border-color: rgba(191, 219, 254, 0.42);
+    background:
+            linear-gradient(135deg, rgba(30, 41, 59, 0.78), rgba(15, 23, 42, 0.66));
+    box-shadow: 0 20px 54px rgba(0, 0, 0, 0.28);
+}
+
+.choices button:hover::before,
+.finalButtons button:hover::before {
+    opacity: 1;
+}
+
+.choiceLabel {
+    position: relative;
+    z-index: 1;
+    display: inline-flex;
+    width: fit-content;
+    margin-bottom: 7px;
+    padding: 4px 8px;
+    border-radius: 999px;
+    color: #bfdbfe;
+    background: rgba(37, 99, 235, 0.14);
+    border: 1px solid rgba(147, 197, 253, 0.16);
+    font-size: 0.66rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.choices button span:last-child {
+    position: relative;
+    z-index: 1;
+}
+
+.sidePanel {
+    position: fixed;
+    top: 22px;
+    right: 22px;
+    z-index: 3;
+    width: var(--panel-width);
+    display: grid;
+    gap: 10px;
+    max-height: calc(100vh - 44px);
+    overflow: hidden;
+    animation: panelIn 420ms ease both;
+}
+
+@keyframes panelIn {
+    from {
+        opacity: 0;
+        transform: translateX(14px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.panelCard {
+    padding: 14px;
+    border-radius: 19px;
+    background: rgba(2, 6, 23, 0.42);
+    border: 1px solid rgba(226, 232, 240, 0.12);
+    box-shadow: 0 18px 52px rgba(0, 0, 0, 0.24);
+    backdrop-filter: blur(18px);
+}
+
+.panelCard h2 {
+    margin: 0 0 10px;
+    color: #dbeafe;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.scorePanelCard {
+    max-height: 230px;
+}
+
+.scoreBar {
+    display: grid;
+    gap: 5px;
+    margin-bottom: 9px;
+}
+
+.scoreBar:last-child {
+    margin-bottom: 0;
+}
+
+.scoreLabel {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    color: #cbd5e1;
+    font-size: 0.76rem;
+}
+
+.scoreTrack {
+    height: 6px;
+    overflow: hidden;
+    border-radius: 999px;
+    background: rgba(148, 163, 184, 0.18);
+}
+
+.scoreFill {
+    height: 100%;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #93c5fd, #f8fafc);
+    transition: width 320ms ease;
+}
+
+.dangerFill {
+    background: linear-gradient(90deg, #fbbf24, #f87171);
+}
+
+.memoryPanelCard {
+    max-height: 42vh;
+    overflow: hidden;
+}
+
+.memoryList {
+    display: grid;
+    gap: 9px;
+    max-height: calc(42vh - 52px);
+    overflow-y: auto;
+    padding-right: 4px;
+}
+
+.memoryList::-webkit-scrollbar {
+    width: 6px;
+}
+
+.memoryList::-webkit-scrollbar-thumb {
+    border-radius: 999px;
+    background: rgba(148, 163, 184, 0.32);
+}
+
+.emptyText {
+    margin: 0;
+    color: #94a3b8;
+    font-size: 0.84rem;
+    line-height: 1.5;
+}
+
+.memoryItem {
+    padding: 11px;
+    border-radius: 15px;
+    background: rgba(2, 6, 23, 0.36);
+    border: 1px solid rgba(226, 232, 240, 0.1);
+}
+
+.memoryItem.unlocked {
+    border-color: rgba(253, 230, 138, 0.2);
+    background:
+            radial-gradient(circle at top left, rgba(253, 230, 138, 0.08), transparent 38%),
+            rgba(2, 6, 23, 0.42);
+}
+
+.memoryItem.locked {
+    opacity: 0.76;
+    border-style: dashed;
+}
+
+.memoryItem h3 {
+    margin: 0 0 6px;
+    color: #fef3c7;
+    font-size: 0.82rem;
+    line-height: 1.35;
+}
+
+.memoryItem.locked h3 {
+    color: #94a3b8;
+}
+
+.memoryItem p {
+    margin: 0;
+    color: #d1d5db;
+    font-size: 0.8rem;
+    line-height: 1.48;
+}
+
+.memoryItem small {
+    display: block;
+    margin-top: 7px;
+    color: #64748b;
+    font-size: 0.75rem;
+    line-height: 1.42;
+}
+
+.badgePanelCard {
+    max-height: 20vh;
+    overflow: hidden;
+}
+
+.badgeList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    max-height: calc(20vh - 46px);
+    overflow-y: auto;
+    padding-right: 3px;
+}
+
+.badgeList span,
+.badgeLarge {
+    display: inline-flex;
+    width: fit-content;
+    padding: 7px 9px;
+    border-radius: 999px;
+    color: #fef3c7;
+    background: rgba(120, 83, 30, 0.44);
+    border: 1px solid rgba(253, 230, 138, 0.2);
+    font-size: 0.74rem;
+    line-height: 1.2;
+}
+
+.reflectionBox {
+    width: 100%;
+    padding: 23px;
+    border-radius: 22px;
+    background:
+            radial-gradient(circle at top left, rgba(253, 230, 138, 0.13), transparent 35%),
+            rgba(2, 6, 23, 0.62);
+    border: 1px solid rgba(253, 230, 138, 0.16);
+}
+
+.reflectionBox h2 {
+    margin: 15px 0 8px;
+    color: #ffffff;
+    font-size: clamp(1.35rem, 2.6vw, 2.2rem);
+    letter-spacing: -0.04em;
+}
+
+.reflectionBox p {
+    margin: 0;
+    color: #e5e7eb;
+    font-size: 1rem;
+    line-height: 1.65;
+}
+
+.noteBox {
+    width: 100%;
+    margin-top: 13px;
+    padding: 15px 17px;
+    border-radius: 18px;
+    background: rgba(2, 6, 23, 0.46);
+    border: 1px solid rgba(147, 197, 253, 0.13);
+}
+
+.noteBox span {
+    display: block;
+    margin-bottom: 7px;
+    color: #93c5fd;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+}
+
+.noteBox p {
+    margin: 0;
+    color: #dbeafe;
+    line-height: 1.58;
+    font-size: 0.94rem;
+}
+
+.outcomeGrid {
+    width: 100%;
+    display: grid;
+    gap: 11px;
+    margin-top: 14px;
+}
+
+.outcomeCard {
+    padding: 16px;
+    border-radius: 18px;
+    background:
+            linear-gradient(135deg, rgba(2, 6, 23, 0.62), rgba(15, 23, 42, 0.46));
+    border: 1px solid rgba(226, 232, 240, 0.12);
+    box-shadow: 0 16px 42px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(18px);
+}
+
+.outcomeCard h2 {
+    margin: 8px 0 7px;
+    color: #ffffff;
+    font-size: 1rem;
+    line-height: 1.35;
+}
+
+.outcomeCard p {
+    margin: 0;
+    color: #d1d5db;
+    font-size: 0.9rem;
+    line-height: 1.55;
+}
+
+.outcomeStatus {
+    display: inline-flex;
+    width: fit-content;
+    padding: 5px 8px;
+    border-radius: 999px;
+    color: #bfdbfe;
+    background: rgba(37, 99, 235, 0.14);
+    border: 1px solid rgba(147, 197, 253, 0.16);
+    font-size: 0.68rem;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+}
+
+.outcome-open,
+.outcome-preserved {
+    border-color: rgba(125, 211, 252, 0.22);
+}
+
+.outcome-open .outcomeStatus,
+.outcome-preserved .outcomeStatus {
+    color: #ccfbf1;
+    background: rgba(20, 184, 166, 0.14);
+    border-color: rgba(94, 234, 212, 0.18);
+}
+
+.outcome-mixed {
+    border-color: rgba(253, 230, 138, 0.16);
+}
+
+.outcome-mixed .outcomeStatus {
+    color: #fef3c7;
+    background: rgba(120, 83, 30, 0.36);
+    border-color: rgba(253, 230, 138, 0.18);
+}
+
+.outcome-closed,
+.outcome-heavy {
+    border-color: rgba(248, 113, 113, 0.14);
+}
+
+.outcome-closed .outcomeStatus,
+.outcome-heavy .outcomeStatus {
+    color: #fecaca;
+    background: rgba(127, 29, 29, 0.28);
+    border-color: rgba(248, 113, 113, 0.16);
+}
+
+.consequenceNote {
+    margin-top: 13px;
+}
+
+.resultSummary .wideSummary {
+    grid-column: 1 / -1;
+}
+
+.finalText {
+    border-color: rgba(248, 250, 252, 0.2);
+}
+
+.lesson {
+    color: #fde68a !important;
+    font-weight: 700;
+}
+
+.finalQuestion {
+    margin-top: 22px !important;
+    color: #ffffff !important;
+    font-size: clamp(1.18rem, 2.2vw, 1.8rem) !important;
+}
+
+.resultSummary {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 11px;
+    margin-top: 14px;
+}
+
+.resultSummary article {
+    padding: 14px;
+    border-radius: 17px;
+    background: rgba(2, 6, 23, 0.46);
+    border: 1px solid rgba(226, 232, 240, 0.11);
+}
+
+.resultSummary span {
+    display: block;
+    margin-bottom: 6px;
+    color: #ffffff;
+    font-weight: 800;
+    font-size: 0.98rem;
+}
+
+.resultSummary p {
+    margin: 0;
+    color: #cbd5e1;
+    line-height: 1.45;
+    font-size: 0.86rem;
+}
+
+.finalButtons {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 11px;
+    margin-top: 14px;
+}
+
+.finalButtons.singleButton {
+    grid-template-columns: 1fr;
+}
+
+.finalButtons button {
+    text-align: center;
+}
+
+.solutionCard {
+    width: min(58vw, 840px);
+}
+
+.solutionList {
+    width: 100%;
+    display: grid;
+    gap: 10px;
+}
+
+.solutionItem {
+    display: grid;
+    grid-template-columns: 38px 1fr;
+    gap: 13px;
+    padding: 15px;
+    border-radius: 18px;
+    background: rgba(2, 6, 23, 0.46);
+    border: 1px solid rgba(226, 232, 240, 0.11);
+}
+
+.solutionItem > span {
+    width: 34px;
+    height: 34px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    color: #0f172a;
+    background: #bfdbfe;
+    font-weight: 800;
+    font-size: 0.9rem;
+}
+
+.solutionItem h2 {
+    margin: 0 0 6px;
+    color: #ffffff;
+    font-size: 1rem;
+}
+
+.solutionItem p {
+    margin: 0;
+    color: #d1d5db;
+    line-height: 1.52;
+    font-size: 0.9rem;
+}
+
+.closingBox {
+    margin-top: 13px;
+}
+
+.endingRespect {
+    --ending-glow: rgba(45, 212, 191, 0.14);
+}
+
+.endingJudgment {
+    --ending-glow: rgba(248, 113, 113, 0.14);
+}
+
+.endingAlienated {
+    --ending-glow: rgba(148, 163, 184, 0.12);
+}
+
+.endingPity {
+    --ending-glow: rgba(251, 191, 36, 0.14);
+}
+
+.endingLate {
+    --ending-glow: rgba(147, 197, 253, 0.14);
+}
+
+.gameCard.endingRespect .dialogueBox,
+.gameCard.endingJudgment .dialogueBox,
+.gameCard.endingAlienated .dialogueBox,
+.gameCard.endingPity .dialogueBox,
+.gameCard.endingLate .dialogueBox {
+    background:
+            radial-gradient(circle at top right, var(--ending-glow), transparent 38%),
+            linear-gradient(135deg, rgba(2, 6, 23, 0.78), rgba(15, 23, 42, 0.6));
+}
+
+@media (max-width: 1180px) {
+    :root {
+        --ui-width: min(62vw, 720px);
+        --panel-width: 290px;
+        --ui-left: 24px;
+    }
+
+    .sidePanel {
+        right: 16px;
+        top: 16px;
+    }
+}
+
+@media (max-width: 900px) {
+    :root {
+        --ui-left: 16px;
+        --ui-top: 16px;
+        --ui-width: 100%;
+    }
+
+    .gameShell {
+        min-height: 100vh;
+        padding: 16px;
+        background-position: center;
+    }
+
+    .backgroundOverlay,
+    .atmosphere-pen .backgroundOverlay,
+    .atmosphere-bus .backgroundOverlay,
+    .atmosphere-music .backgroundOverlay,
+    .atmosphere-rainboy .backgroundOverlay,
+    .atmosphere-charity .backgroundOverlay,
+    .atmosphere-shop .backgroundOverlay,
+    .atmosphere-student .backgroundOverlay,
+    .atmosphere-ending .backgroundOverlay,
+    .atmosphere-solution .backgroundOverlay {
+        background:
+                linear-gradient(
+                        180deg,
+                        rgba(2, 6, 23, 0.88) 0%,
+                        rgba(2, 6, 23, 0.72) 34%,
+                        rgba(2, 6, 23, 0.94) 100%
+                ),
+                radial-gradient(circle at center, transparent 36%, rgba(0, 0, 0, 0.62) 100%);
+    }
+
+    .gameLayout {
+        display: grid;
+        gap: 14px;
+    }
+
+    .gameCard,
+    .solutionCard {
+        width: 100%;
+        max-width: none;
+    }
+
+    .sidePanel {
+        position: relative;
+        top: auto;
+        right: auto;
+        width: 100%;
+        max-height: none;
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .memoryPanelCard,
+    .badgePanelCard {
+        max-height: none;
+    }
+
+    .memoryList,
+    .badgeList {
+        max-height: 260px;
+    }
+
+    h1 {
+        font-size: clamp(1.85rem, 9vw, 3.2rem);
+    }
+
+    .resultSummary,
+    .finalButtons {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .gameShell {
+        padding: 12px;
+    }
+
+    .progressMap,
+    .dialogueBox,
+    .reflectionBox,
+    .noteBox,
+    .panelCard {
+        border-radius: 17px;
+    }
+
+    .progressSteps {
+        gap: 5px;
+    }
+
+    .progressStep {
+        font-size: 0.66rem;
+        padding: 7px 8px;
+    }
+
+    .chapterRow {
+        flex-direction: column;
+        gap: 5px;
+        font-size: 0.72rem;
+    }
+
+    .dialogueBox {
+        padding: 18px;
+    }
+
+    .dialogueBox p {
+        font-size: 0.97rem;
+    }
+
+    .choices button,
+    .finalButtons button {
+        font-size: 0.92rem;
+    }
+
+    .solutionItem {
+        grid-template-columns: 1fr;
+    }
+}
