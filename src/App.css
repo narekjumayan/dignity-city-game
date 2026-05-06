@@ -942,7 +942,25 @@ h1 {
     }
 
     .sidePanel {
-        display: none;
+        display: grid;
+        position: relative;
+        top: auto;
+        right: auto;
+        width: 100%;
+        max-height: none;
+        margin-top: 14px;
+        gap: 8px;
+    }
+
+    .scorePanelCard,
+    .memoryPanelCard,
+    .badgePanelCard {
+        max-height: none;
+    }
+
+    .memoryList,
+    .badgeList {
+        max-height: 220px;
     }
 
     .progressMap {
@@ -1092,16 +1110,16 @@ h1 {
     }
 
     .dialogueBox {
-        padding: 18px;
+        padding: 14px;
     }
 
     .dialogueBox p {
-        font-size: 0.97rem;
+        font-size: 0.9rem;
     }
 
     .choices button,
     .finalButtons button {
-        font-size: 0.92rem;
+        font-size: 0.86rem;
     }
 
     .solutionItem {
